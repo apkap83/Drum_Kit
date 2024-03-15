@@ -62,14 +62,16 @@
         const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
 
         if (!audio) return;
-
-        audio.currentTime = 0; // rewind to the start
-        audio.play();
-
+        // Add Styling in the div
+        key.classList.add("playing");
         // JQuery line
         // key.addClass("playing")
 
-        key.classList.add("playing");
+        // Rewind to the start of the audio file
+        audio.currentTime = 0;
+
+        // Play the Audio file
+        audio.play();
       }
 
       function removeTransition(e) {
